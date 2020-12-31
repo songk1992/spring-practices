@@ -26,11 +26,13 @@ public class EmaillistController {
 	
 	@RequestMapping(value="/add", method=RequestMethod.GET)
 	public String add() {
+		System.out.println("GET");
 		return "add";
 	}
 
 	@RequestMapping(value="/add", method=RequestMethod.POST)
 	public String add(EmaillistVo vo) {
+		System.out.println("POST");
 		emaillistRepository.insert(vo);
 		return "redirect:/";
 	}
