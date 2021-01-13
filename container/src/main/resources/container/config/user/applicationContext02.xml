@@ -13,16 +13,66 @@
         http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
 
 	<!-- 초간단 빈 설정 -->
-	<bean id = "user2" class="container.user.User2" />
+	<bean id = "user" class="container.user.User2" />
 
 	<!-- 기본 생성자로 빈 생성 -->
 	<bean id = "user1" name="usr" class="container.user.User" />
 	
 	<!--  파라미터 1개 생성자로 빈 생성 -->
 	<bean id = "user2" class="container.user.User" >
-		<constructor-arg value="삼리"/>
+		<constructor-arg value="둘리"/>
+	</bean>
+	
+	<!--  파라미터 2개 생성자로 빈 생성1 -->
+	<bean id = "user3" class="container.user.User" >
+		<constructor-arg value="3" />
+		<constructor-arg value="삼리" />
+	</bean>
+	
+	<!--  파라미터 2개 생성자로 빈 생성2 -->
+	<bean id = "user4" class="container.user.User" >
+		<constructor-arg index="1" value="사리" />
+		<constructor-arg index="0" value="4" />
+	</bean>
+	
+	<!--  기본 생성자로 빈 생성 + setter 사용 -->
+	<bean id = "user5" class="container.user.User" >
+		<constructor-arg name="no" value="5" />
+		<constructor-arg name="name" value="오리" />
+		<!-- (D)ependency (I)njection -->
+		<property name = "friend" ref="friend" />
+	</bean>
+	<bean id="friend" class="container.user.Friend" >
+		<constructor-arg value="길동" />
 	</bean>
 	
 	
+	
+
+	<!--  User 갤체를 생성하면서 friend 객체를 바로 DI하기 -->
+	<bean id = "user6" class="container.user.User" >
+		<constructor-arg name="no" value="6" />
+		<constructor-arg name="name" value="육리" />
+		<!-- (D)ependency (I)njection -->
+		<property name = "friend">
+			<bean id="friend" class="container.user.Friend" >
+				<constructor-arg value="길동" />
+			</bean>
+		</property>
+	</bean>
+	
+	<!--  setter를 사용한 리스트 세팅하기 -->
+	<bean id = "user7" class="container.user.User" >
+		<property name="no" value="7" />
+		<property name="name" value="아이언맨" />
+		<property name="friends">
+			<list>
+				<value>스파이더맨</value>
+				<value>캡틴</value>
+				<value>헐크</value>
+			</list>
+		</property>
+	</bean>
+
 	
 </beans>
