@@ -55,6 +55,16 @@
 		    <scope>test</scope>
 		</dependency>
 		
+		
+		<!-- 자바버젼 (JR330) Scanning, wiring Annotation -->
+		<dependency>
+		    <groupId>javax.inject</groupId>
+		    <artifactId>javax.inject</artifactId>
+		    <version>1</version>
+		</dependency>
+		
+		
+		
 	</dependencies>
 	
 	<build>

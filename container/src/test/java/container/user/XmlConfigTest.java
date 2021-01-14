@@ -1,4 +1,3 @@
-  
 package container.user;
 
 import static org.junit.Assert.assertEquals;
@@ -13,11 +12,10 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-//@ContextConfiguration(classes={AppConfig01.class})
-@ContextConfiguration(locations={"/container/config/user/applicationContext02.xml"})
+@ContextConfiguration(locations= {"/container/config/user/applicationContext02.xml"})
 public class XmlConfigTest {
 	@Autowired
-	@Qualifier("user2")
+	@Qualifier("user3")
 	private User user;
 	
 	@Test
@@ -28,7 +26,6 @@ public class XmlConfigTest {
 	@Ignore
 	@Test
 	public void testGetName() {
-		assertEquals(user.getName(), "둘리");
+		assertEquals(user.getName(), "삼리");
 	}
-	
 }
