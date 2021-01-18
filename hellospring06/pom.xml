@@ -8,7 +8,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>hellospring06</artifactId>
-
+	
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -20,7 +20,7 @@
 			</dependency>
 		</dependencies>	
 	</dependencyManagement>
-
+	
 	<dependencies>
 		<!-- spring boot stater -->
 		<dependency>
@@ -33,22 +33,22 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		
 		<!-- jstl -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 		</dependency>
-
+		
 		<!-- tomcat jasper -->
 		<dependency>
 		    <groupId>org.apache.tomcat.embed</groupId>
 		    <artifactId>tomcat-embed-jasper</artifactId>
 		</dependency>
-
+		
 		<!-- test -->
 	</dependencies>
-
+	
 	<build>
 		<finalName>hellospring06</finalName>
 		<resources>

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class MainController {
 	
 	@ResponseBody
-	@RequestMapping({"","/main"})
+	@RequestMapping({"", "/main"})
 	public String main() {
 		return "MainController:main";
 	}

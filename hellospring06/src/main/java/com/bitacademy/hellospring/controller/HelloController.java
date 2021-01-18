@@ -1,7 +1,5 @@
 package com.bitacademy.hellospring.controller;
 
-import java.util.ArrayList;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +8,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HelloController {
-	
 	@RequestMapping("/hello")
 	public String hello() {
 		return "/WEB-INF/views/hello.jsp";
@@ -21,13 +18,13 @@ public class HelloController {
 		System.out.println(name);
 		return "/WEB-INF/views/hello.jsp";
 	}
-	
-	
+
 	@RequestMapping("/hello3")
 	public ModelAndView hello3(String name) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("name", name);
 		mav.setViewName("/WEB-INF/views/hello.jsp");
+		
 		return mav;
 	}
 	
@@ -36,17 +33,11 @@ public class HelloController {
 		model.addAttribute("name", name);
 		return "/WEB-INF/views/hello.jsp";
 	}
-	
+
 	@RequestMapping("/hello5")
 	@ResponseBody
 	public String hello5(String name) {
-		return "Hello" + name;
-	}
-	
-	@RequestMapping("/hello5_error")
-	@ResponseBody
-	public ArrayList hello5_error(String name) {
-		return new ArrayList();
+		return "Hello " + name;
 	}
 	
 }
