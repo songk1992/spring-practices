@@ -1,4 +1,4 @@
-package com.bitacademy.hellospring03.controller;
+package com.bitacademy.hellospring.controller;
 
 import java.util.ArrayList;
 
